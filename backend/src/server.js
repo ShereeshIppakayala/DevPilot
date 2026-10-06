@@ -9,7 +9,7 @@ async function startServer() {
       serverSelectionTimeoutMs: config.mongodbServerSelectionTimeoutMs,
     })
   } catch (error) {
-    console.error(`API startup failed (${error.name}). Check server configuration and database availability.`)
+    console.error(`API startup failed:` , error)
     process.exitCode = 1
     return
   }
