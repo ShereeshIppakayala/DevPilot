@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import { errorHandler } from './middleware/error-handler.js'
 import { notFoundHandler } from './middleware/not-found.js'
 import { requestIdMiddleware } from './middleware/request-id.js'
@@ -9,6 +10,13 @@ import { healthRouter } from './routes/health.routes.js'
 import { ragRouter } from './routes/rag.routes.js'
 
 export const app = express()
+
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+)
 
 app.disable('x-powered-by')
 app.use(requestIdMiddleware)

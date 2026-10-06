@@ -12,6 +12,7 @@
   "dependencies": {
     "@google/genai": "^2.24.0",
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
     "express": "^5.1.0",
     "express-rate-limit": "^8.7.0",
     "jsonwebtoken": "^9.0.3",
